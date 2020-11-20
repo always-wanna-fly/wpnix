@@ -1,4 +1,20 @@
 <?php
+add_action('after_setup_theme', 'myMenu');
+
+
+
+
+
+
+
+
+function myMenu(){
+    register_nav_menu('top', 'header menu');
+    add_theme_support('title-tag');
+    add_theme_support('post-thumbnails', array('post'));
+    add_image_size('post_thumb', 200, 200, true);
+
+}
 
 function load_bootstrap(){
     wp_enqueue_script('bootstrap-js', get_template_directory_uri().'/assets/js/bootstrap.js');
